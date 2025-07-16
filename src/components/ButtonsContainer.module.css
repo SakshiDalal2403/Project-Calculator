@@ -1,0 +1,64 @@
+.buttonsContainer{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.button {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #3a3a3a;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 3px 3px 6px #b8b8b8, -3px -3px 6px #ffffff;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.1) 0%,  
+    rgba(255,255,255,0.7) 50%, 
+    rgba(255,255,255,0.1) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.button:active::after {
+  animation: shine 0.4s forwards;
+}
+
+
+.button:hover {
+  
+  background: #505050;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.button:active {
+  background-color: #ddd;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
